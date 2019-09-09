@@ -1,6 +1,7 @@
 unit module LibXML::Native::Defs;
 
-constant LIB is export(:LIB) = 'xml2';
+use GTK::Simple::NativeLib;
+constant LIB is export(:LIB) = $*VM.config<dll> ~~ /dll/ ?? xml-lib() !! 'xml2';
 constant BIND-LIB is export(:BIND-LIB) =  %?RESOURCES<libraries/xml6>;
 constant Opaque is export(:Opaque) = 'CPointer';
 constant xmlCharP is export(:xmlCharP) = Str;
