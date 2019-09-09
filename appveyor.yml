@@ -19,9 +19,9 @@ install:
   - SET PATH=%P6INST%\bin;%P6SHARE%\site\bin;%P6SHARE%\bin;%PATH%
   - rakudobrew build zef
   - cd %APPVEYOR_BUILD_FOLDER%
-  - set AUTHOR_TESTING=1
   - zef install IO::Socket::SSL
   - zef install GTK::Simple
+  - set AUTHOR_TESTING=1
   - zef --verbose --depsonly install .
 
 build: off
