@@ -20,6 +20,7 @@ install:
   - rakudobrew build zef
   - cd %APPVEYOR_BUILD_FOLDER%
   - set AUTHOR_TESTING=1
+  - zef install IO::Socket::SSL
   - zef install GTK::Simple
   - zef --verbose --depsonly install .
 
